@@ -5,9 +5,12 @@ public class EnemySpawn : MonoBehaviour {
 
 	public GameState gameState;
 	public PollingManager enemyPolling;
-	public GameObject SpawnArea;
+	public GameObject spawnArea;
 	[Range(0.1f, 50f)]
-	public float SpawnPerSecond = 0.5f;
+	public float spawnPerSecond = 0.5f;
+
+	[Range(5, 1000)]
+	public int spawnPV = 10;
 
 	public bool spawning = true;
 
@@ -18,13 +21,13 @@ public class EnemySpawn : MonoBehaviour {
 	
 		if (Time.time > nextSpawn && spawning) {
 			
-			nextSpawn = Time.time + 1/SpawnPerSecond;
+			nextSpawn = Time.time + 1/spawnPerSecond;
 			GameObject enemy = enemyPolling.getFirstAvailable();
 
-			enemy.GetComponent<Enemy>().PV = 50;
+			enemy.GetComponent<Enemy>().PV = spawnPV;
 			enemy.GetComponent<Enemy>().gameState = gameState;
 
-			Vector3 colliderSize = SpawnArea.GetComponent<BoxCollider>().size;
+			Vector3 colliderSize = spawnArea.GetComponent<BoxCollider>().size;
 
 			Vector3 variance = new Vector3(
 				Random.Range(-colliderSize.x, -colliderSize.x),
@@ -32,7 +35,7 @@ public class EnemySpawn : MonoBehaviour {
 				Random.Range(-colliderSize.z, -colliderSize.z)
 				);
 
-			enemy.transform.position = SpawnArea.transform.position + variance;
+			enemy.transform.position = spawnArea.transform.position + variance;
 
 
 		}

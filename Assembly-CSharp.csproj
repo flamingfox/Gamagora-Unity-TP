@@ -45,14 +45,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\script\Bullet.cs" />
      <Compile Include="Assets\script\Enemy.cs" />
      <Compile Include="Assets\script\EnemySpawn.cs" />
      <Compile Include="Assets\script\GameState.cs" />
      <Compile Include="Assets\script\ParticuleManager.cs" />
      <Compile Include="Assets\script\PollingManager.cs" />
+     <Compile Include="Assets\script\Projectille.cs" />
      <Compile Include="Assets\script\TPSCamera.cs" />
-     <Compile Include="Assets\script\Turret.cs" />
+     <Compile Include="Assets\script\Turret\Turret.cs" />
+     <Compile Include="Assets\script\Turret\Turret_Gatling.cs" />
+     <Compile Include="Assets\script\Turret\Turret_Missile.cs" />
      <Compile Include="Assets\script\interface\IKillable.cs" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
  <Reference Include="UnityEngine.UI">

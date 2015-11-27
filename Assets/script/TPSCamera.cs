@@ -7,10 +7,17 @@ public class TPSCamera : MonoBehaviour {
 
 	public float distanceCameraPlayer = 3f;
 	public float hauteurCameraPlayer = 1f;
-	
+
+	private Vector3 positionRTS;
+	private Quaternion rotationRTS;
+
+	void Start(){
+		positionRTS = transform.position;
+		rotationRTS = transform.rotation;
+	}
+
 	// Update is called once per frame
 	void Update () {
-
 		if (player != null) {
 			if (!player.auto) {
 				Vector3 positionCamera = player.getGunPosition();
@@ -22,13 +29,13 @@ public class TPSCamera : MonoBehaviour {
 				this.gameObject.transform.rotation = player.getGunRotation();
 			}
 			else {
-				transform.position = new Vector3(-12f, 15.5f, 8.8f);
-				transform.rotation = Quaternion.Euler(50, 90, 0);
+				transform.position = positionRTS;
+				transform.rotation = rotationRTS;
 			}
 		}
 		else {
-			transform.position = new Vector3(-12f, 15.5f, 8.8f);
-			transform.rotation = Quaternion.Euler(50, 90, 0);
+			transform.position = positionRTS;
+			transform.rotation = rotationRTS;
 		}
 
 
