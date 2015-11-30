@@ -17,8 +17,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-Library/
-
 # =========================
 # Operating System Files
 # =========================
@@ -43,3 +41,11 @@ Library/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+# ============================
+# Project
+# ============================
+
+Library/
+Temp/
