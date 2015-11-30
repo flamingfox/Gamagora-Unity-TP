@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Turret_Missile : Turret {
+public class Turret_Grenade : Turret {
 
 	public PollingManager missileManager;
-
+	
 	protected override void aim ()
 	{
 		Vector3 directionTarget = target.transform.position - support.transform.position;
@@ -21,12 +21,12 @@ public class Turret_Missile : Turret {
 		
 		support.transform.rotation = Quaternion.LookRotation (newDir);
 	}
-
+	
 	override protected void fire(){
-
+		
 		GameObject missile = missileManager.getFirstAvailable ();
 		Projectille projectille = missile.GetComponent<Projectille> ();
-
+		
 		projectille.transform.position = gun.transform.position;
 		projectille.setGunner (tower);
 		projectille.damage = damage;
@@ -35,5 +35,4 @@ public class Turret_Missile : Turret {
 		projectille.setDirection (gun.transform.up);
 		projectille.pollingEnemy = pollingEnemy;
 	}
-
 }

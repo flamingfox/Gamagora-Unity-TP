@@ -1,43 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TPSCamera : MonoBehaviour {
+public class TPSCamera : MonoBehaviour
+{
 
 	public Turret player;
-
 	public float distanceCameraPlayer = 3f;
 	public float hauteurCameraPlayer = 1f;
-
 	private Vector3 positionRTS;
 	private Quaternion rotationRTS;
 
-	void Start(){
+	void Start ()
+	{
 		positionRTS = transform.position;
 		rotationRTS = transform.rotation;
 	}
 
+	/*
 	// Update is called once per frame
-	void Update () {
-		if (player != null) {
-			if (!player.auto) {
-				Vector3 positionCamera = player.getGunPosition();
-
-				positionCamera -= player.getGunDirection() * distanceCameraPlayer;
-				positionCamera += Vector3.Cross (player.transform.forward, player.transform.right) * hauteurCameraPlayer;
-
-				this.gameObject.transform.position = positionCamera;
-				this.gameObject.transform.rotation = player.getGunRotation();
-			}
-			else {
-				transform.position = positionRTS;
-				transform.rotation = rotationRTS;
-			}
-		}
-		else {
-			transform.position = positionRTS;
-			transform.rotation = rotationRTS;
-		}
-
-
+	void Update ()
+	{
+		transform.position = positionRTS;
+		transform.rotation = rotationRTS;
 	}
+	*/
+
 }

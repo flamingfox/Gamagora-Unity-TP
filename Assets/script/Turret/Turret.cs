@@ -8,120 +8,82 @@ abstract public class Turret : MonoBehaviour
 	public GameObject support;
 	public GameObject gun;
 	public Enemy target;
-	public PollingManager bulletManager;
 	public PollingManager pollingEnemy;
 	public ParticleSystem fireEffect;
 	[Range(0, 5f)]
-	public float speedRotate = 2f;
+	public float
+		speedRotate = 2f;
 	[Range(0, 100f)]
-	public float shootPerSecond = 0.25f;
+	public float
+		shootPerSecond = 0.25f;
 	[Range(0, 50f)]
-	public float range = 20f;
+	public float
+		range = 20f;
 	[Range(1, 100)]
-	public int damage = 1;
-	public bool auto = false;
-	public bool fireAuto = false;
-
+	public int
+		damage = 1;
 	private float nextFire = 0f;
 	public float gunRotationSpeedCoeff = 1;
 
 	// Update is called once per frame
 	void Update ()
 	{
-		if (!auto) {
-			if (Input.GetButton ("Horizontal") && Input.GetAxisRaw ("Horizontal") > 0) {
-				support.transform.RotateAround (support.transform.position, Vector3.up, speedRotate);
-			} else if (Input.GetButton ("Horizontal") && Input.GetAxisRaw ("Horizontal") < 0) {
-				support.transform.RotateAround (support.transform.position, Vector3.up, -speedRotate);
-			} else if (Input.GetButton ("Vertical") && Input.GetAxisRaw ("Vertical") > 0) {
+		if (target == null) {
+			float distance = range;
+			ArrayList listEnemy = pollingEnemy.getListActive ();
+			foreach (GameObject gO in listEnemy) {
 
-				if (support.transform.eulerAngles.x < 30 || support.transform.eulerAngles.x > 320) {
-					support.transform.Rotate (Vector3.left * speedRotate);
-				}
-			} else if (Input.GetButton ("Vertical") && Input.GetAxisRaw ("Vertical") < 0) {
-				if (support.transform.eulerAngles.x < 20 || support.transform.eulerAngles.x > 310) {
-					support.transform.Rotate (Vector3.left * -speedRotate);
+				if (!gO.GetComponent<Enemy> ().isDead ()) {
+					if (Vector3.Distance (gO.transform.position, this.transform.position) <= distance) {
+						target = gO.GetComponent<Enemy> ();
+						distance = Vector3.Distance (gO.transform.position, this.transform.position);
+					}
 				}
 			}
 		} else {
 
-			if (target == null) {
-				float distance = range;
-				ArrayList listEnemy = pollingEnemy.getListActive ();
-				foreach (GameObject gO in listEnemy) {
-
-					if (!gO.GetComponent<Enemy> ().isDead ()) {
-						if (Vector3.Distance (gO.transform.position, this.transform.position) <= distance) {
-							target = gO.GetComponent<Enemy> ();
-							distance = Vector3.Distance (gO.transform.position, this.transform.position);
-						}
-					}
-				}
+			if (target.isDead ()) {
+				target = null;
 			} else {
-
-				if(target.isDead ()){
-					target = null;
-				}
-				else{
-					Vector3 directionTarget = target.transform.position - support.transform.position;
-					directionTarget = directionTarget.normalized;
-
-					Debug.DrawLine (support.transform.position, support.transform.position + directionTarget * 2f, Color.cyan);
-
-					float stepRotation = speedRotate * Time.deltaTime;
-
-					Vector3 newDir = Vector3.RotateTowards (support.transform.forward,
-	                                                    directionTarget,
-				                                       	stepRotation,
-	                                                  	0f);
-
-					support.transform.rotation = Quaternion.LookRotation (newDir);
-				}
+				aim ();
 			}
-
 		}
+
 
 		Debug.DrawRay (support.transform.position, support.transform.forward * 2f, Color.red, 0f);
 
-		if (Input.GetButtonDown ("Jump")) {
-			auto = !auto;
-			
-			if (!auto)
-				target = null;
-		}
-		else if (Input.GetButton ("Fire1") || (fireAuto && target != null) ) {
+		if (target != null) {
 
 			gun.transform.RotateAround (support.transform.position, support.transform.forward, shootPerSecond * gunRotationSpeedCoeff);
 
-			if (Time.time > nextFire) {
+			if (Time.time > nextFire && Vector3.Angle (support.transform.forward, target.transform.position - support.transform.position) < 5f) {
 
 				fireEffect.Play ();
-				nextFire = Time.time + 1/shootPerSecond;
-				GameObject bullet = bulletManager.getFirstAvailable ();
-				Projectille projectille = bullet.GetComponent<Projectille> ();
+				nextFire = Time.time + 1 / shootPerSecond;
 
-				fire(projectille);
+				fire ();
 			}
 		}
 	}
 
-	public void OnDrawGizmosSelected(){
-		int size = 24 ; //Total number of points in circle.
-		float theta_scale = (2.0f * 3.14f)/size;             //Set lower to add more points
+	public void OnDrawGizmosSelected ()
+	{
+		int size = 24; //Total number of points in circle.
+		float theta_scale = (2.0f * 3.14f) / size;             //Set lower to add more points
 
 		Vector3 pos, posPrecedent;
 
 		/************ ghost Range *************/
 		Gizmos.color = Color.green;
 
-		posPrecedent = new Vector3 (transform.position.x+range, 0, transform.position.z);
+		posPrecedent = new Vector3 (transform.position.x + range, 0, transform.position.z);
 
-		for(int i = 1; i <= size; i++) {
+		for (int i = 1; i <= size; i++) {
 			float theta = i * theta_scale;
-			float x = range*Mathf.Cos(theta);
-			float z = range*Mathf.Sin(theta);
+			float x = range * Mathf.Cos (theta);
+			float z = range * Mathf.Sin (theta);
 			
-			pos = new Vector3(transform.position.x+x, 0, transform.position.z+z);
+			pos = new Vector3 (transform.position.x + x, 0, transform.position.z + z);
 			Gizmos.DrawLine (posPrecedent, pos);
 			posPrecedent = pos;
 		}
@@ -171,14 +133,16 @@ abstract public class Turret : MonoBehaviour
 		*/
 	}
 
-	abstract protected void fire(Projectille projectille);
+	abstract protected void aim ();
+	abstract protected void fire ();
 
 	public Vector3 getGunPosition ()
 	{
 		return support.transform.position;
 	}
 
-	public Vector3 getGunDirection(){
+	public Vector3 getGunDirection ()
+	{
 		return support.transform.forward;
 	}
 
