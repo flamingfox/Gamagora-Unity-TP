@@ -9,7 +9,7 @@ public class Turret_Missile : Turret {
 		projectille.damage = damage;
 		projectille.target = target;
 		projectille.lifeDistance = range;
-		projectille.setDirection (gun.transform.forward);
+		projectille.setDirection (gun.transform.up);
 		projectille.pollingEnemy = pollingEnemy;
 	}
 
