@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Turret_Grenade : Turret {
 
-	public PollingManager missileManager;
+	public PollingManager grenadeManager;
 	
 	protected override void aim ()
 	{
@@ -24,14 +24,12 @@ public class Turret_Grenade : Turret {
 	
 	override protected void fire(){
 		
-		GameObject missile = missileManager.getFirstAvailable ();
-		Projectille projectille = missile.GetComponent<Projectille> ();
+		GameObject grenade = grenadeManager.getFirstAvailable ();
+		Projectille projectille = grenade.GetComponent<Projectille> ();
 		
 		projectille.transform.position = gun.transform.position;
 		projectille.setGunner (tower);
 		projectille.damage = damage;
-		projectille.target = target;
 		projectille.lifeDistance = range;
-		projectille.setDirection (gun.transform.up);
 	}
 }

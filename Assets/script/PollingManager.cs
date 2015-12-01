@@ -26,6 +26,7 @@ public class PollingManager : MonoBehaviour {
 			}
 		}
 		GameObject clone = Instantiate (model, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+		clone.transform.SetParent( transform );
 		pooling.Add (clone);
 
 		return clone;

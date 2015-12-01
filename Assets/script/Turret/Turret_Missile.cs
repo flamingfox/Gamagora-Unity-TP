@@ -25,7 +25,7 @@ public class Turret_Missile : Turret {
 	override protected void fire(){
 
 		GameObject missile = missileManager.getFirstAvailable ();
-		Projectille projectille = missile.GetComponent<Projectille> ();
+		GuidedProjectille projectille = missile.GetComponent<GuidedProjectille> ();
 
 		projectille.transform.position = gun.transform.position;
 		projectille.setGunner (tower);
