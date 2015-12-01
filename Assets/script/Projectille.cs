@@ -11,7 +11,6 @@ public class Projectille : MonoBehaviour, IKillable
 	public int damage = 1;
 	public float rotationSpeed = 5f;
 	public ParticuleManager impactEffect;
-	public PollingManager pollingEnemy;
 	private Vector3 direction;
 	private GameObject gunner;
 	private bool dead = false;
@@ -38,27 +37,8 @@ public class Projectille : MonoBehaviour, IKillable
 				this.transform.position += (direction * speed);
 
 				if (target == null || target.isDead ()) {
-
 					target = null;
-
-					ArrayList listEnemy = pollingEnemy.getListActive ();
-					foreach (GameObject gO in listEnemy) {
-						if (!gO.GetComponent<Enemy> ().isDead ()) {
-							if (gO.GetComponent<Enemy> ().collision (this.transform.position)) {
-								gO.GetComponent<Enemy> ().hit (damage);
-
-								impact ();
-
-								break;
-							}
-						}
-					}
 				} else {
-					if (target.collision (this.transform.position)) {
-						target.hit (damage);
-
-						impact ();
-					}
 
 					float stepRotation = rotationSpeed * Time.deltaTime;
 
@@ -94,10 +74,12 @@ public class Projectille : MonoBehaviour, IKillable
 
 	void OnTriggerEnter (Collider collision)
 	{
-		/*if (collision.gameObject != gunner && collision.gameObject.tag != projectile.gameObject.tag) {
-			Debug.Log ("works!");
-			GameObject.Destroy (projectile);
-		}*/		
+		if (collision.tag == "enemy" && !collision.GetComponent<Enemy>().isDead() ) {
+			collision.GetComponent<Enemy> ().hit (damage);
+			impact ();
+		} else if (collision.tag == "environnement") {
+			kill ();
+		}
 	}
 
 	void impact ()

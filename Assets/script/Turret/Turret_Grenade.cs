@@ -33,6 +33,5 @@ public class Turret_Grenade : Turret {
 		projectille.target = target;
 		projectille.lifeDistance = range;
 		projectille.setDirection (gun.transform.up);
-		projectille.pollingEnemy = pollingEnemy;
 	}
 }
