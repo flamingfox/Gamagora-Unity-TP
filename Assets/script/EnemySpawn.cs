@@ -21,7 +21,7 @@ public class EnemySpawn : MonoBehaviour {
 			nextSpawn = Time.time + 1/SpawnPerSecond;
 			GameObject enemy = enemyPolling.getFirstAvailable();
 
-			enemy.GetComponent<Enemy>().PV = spawnPV;
+			enemy.GetComponent<Enemy>().PV = 50;
 			enemy.GetComponent<Enemy>().gameState = gameState;
 
 			Vector3 colliderSize = SpawnArea.GetComponent<BoxCollider>().size;
