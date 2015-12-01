@@ -1,0 +1,439 @@
+﻿Revert "Merge remote-tracking branch 'refs/remotes/origin/TP1_save'"
+
+This reverts commit 14b2865663b093fa24b8791d8824fa9d742b3281, reversing
+changes made to 7b63d97aa010e63a446996dd83071a837d9958fa.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   .gitattributes
+#	new file:   .gitignore
+#	modified:   Assembly-CSharp-Editor-firstpass.csproj
+#	modified:   Assembly-CSharp-Editor.csproj
+#	modified:   Assembly-CSharp-firstpass.csproj
+#	modified:   Assembly-CSharp.csproj
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Materials/Skybox_BlueNebular.mat
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Materials/Skybox_BlueNebular.mat.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Materials/Skybox_GreenNebular.mat
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Materials/Skybox_GreenNebular.mat.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_BlueNebular_Textures.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_BlueNebular_Textures/BlueNebular_back.jpg
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_BlueNebular_Textures/BlueNebular_back.jpg.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_BlueNebular_Textures/BlueNebular_bottom.jpg
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_BlueNebular_Textures/BlueNebular_bottom.jpg.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_BlueNebular_Textures/BlueNebular_front.jpg
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_BlueNebular_Textures/BlueNebular_front.jpg.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_BlueNebular_Textures/BlueNebular_left.jpg
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_BlueNebular_Textures/BlueNebular_left.jpg.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_BlueNebular_Textures/BlueNebular_right.jpg
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_BlueNebular_Textures/BlueNebular_right.jpg.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_BlueNebular_Textures/BlueNebular_top.jpg
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_BlueNebular_Textures/BlueNebular_top.jpg.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_GreenNebular_Textures.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_GreenNebular_Textures/GreenNebular_back.jpg
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_GreenNebular_Textures/GreenNebular_back.jpg.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_GreenNebular_Textures/GreenNebular_bottom.jpg
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_GreenNebular_Textures/GreenNebular_bottom.jpg.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_GreenNebular_Textures/GreenNebular_front.jpg
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_GreenNebular_Textures/GreenNebular_front.jpg.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_GreenNebular_Textures/GreenNebular_left.jpg
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_GreenNebular_Textures/GreenNebular_left.jpg.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_GreenNebular_Textures/GreenNebular_right.jpg
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_GreenNebular_Textures/GreenNebular_right.jpg.meta
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_GreenNebular_Textures/GreenNebular_top.jpg
+#	deleted:    Assets/graphics/materiaux/3Skyboxes/Skybox_GreenNebular_Textures/GreenNebular_top.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech01.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech01.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech01b.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech01b.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech01c.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech01c.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech02.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech02.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech02b.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech02b.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech02c.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech02c.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech03.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech03.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech04.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech04.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech04b.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech04b.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech05.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech05.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech05b.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech05b.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech05c.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech05c.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech05d.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech05d.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech05e.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech05e.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech06.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech06.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech07.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech07.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech08.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTech08.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTiles.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/FloorTiles.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/Wall01.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/Wall01.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/Wall01b.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/Wall01b.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/Wall01c.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/Wall01c.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/Wall02.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/Wall02.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/Wall02b.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/Wall02b.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/Wall02c.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/Wall02c.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/Wall03.mat
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/materiaux/Wall03.mat.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech01.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech01.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech01b.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech01b.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech01c.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech01c.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech02.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech02.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech02b.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech02b.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech02c.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech02c.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech03.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech03.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech04.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech04.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech04b.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech04b.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech05.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech05.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech05b.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech05b.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech05c.tga
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech05c.tga.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech05d.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech05d.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech05e.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech05e.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech06.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech06.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech07.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech07.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech08.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTech08.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTiles.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/FloorTiles.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/Wall01.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/Wall01.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/Wall01b.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/Wall01b.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/Wall01c.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/Wall01c.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/Wall02.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/Wall02.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/Wall02b.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/Wall02b.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/Wall02c.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/Wall02c.jpg.meta
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/Wall03.jpg
+#	new file:   Assets/graphics/materiaux/Free SciFi Textures/texture/Wall03.jpg.meta
+#	renamed:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Electric_Liquid.sbsar -> Assets/graphics/materiaux/Substances_Free/Electric_Liquid.sbsar
+#	renamed:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Electric_Liquid.sbsar.meta -> Assets/graphics/materiaux/Substances_Free/Electric_Liquid.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/BrickWall_02.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/BrickWall_02.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Camouflage_02.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Camouflage_02.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Cereals.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Cereals.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Desert_Sand_01.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Desert_Sand_01.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Electric_Liquid.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Electric_Liquid.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Pavement_01.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Pavement_01.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Pavement_Path.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Pavement_Path.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Road_01.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Road_01.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Shutter_01.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Shutter_01.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Stones_01.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Stones_01.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Wood_Planks_01.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/Wood_Planks_01.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/bricks_032.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/bricks_032.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/concrete_049.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/concrete_049.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/metal_floor_003.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/metal_floor_003.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/metal_plate_005.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/metal_plate_005.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/metal_plate_008.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/metal_plate_008.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/roofing_007.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/roofing_007.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/sci_fi_003.sbsprs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_presets/sci_fi_003.sbsprs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/BrickWall_02.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/BrickWall_02.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Camouflage_02.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Camouflage_02.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Cereals.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Cereals.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Desert_Sand_01.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Desert_Sand_01.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Electric_Liquid.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Electric_Liquid.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Pavement_01.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Pavement_01.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Pavement_Path.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Pavement_Path.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Road_01.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Road_01.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Shutter_01.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Shutter_01.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Stones_01.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Stones_01.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Wood_Planks_01.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/Wood_Planks_01.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/bricks_032.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/bricks_032.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/concrete_049.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/concrete_049.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/metal_floor_003.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/metal_floor_003.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/metal_plate_005.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/metal_plate_005.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/metal_plate_008.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/metal_plate_008.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/roofing_007.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/roofing_007.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/sci_fi_003.sbs
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbs/sci_fi_003.sbs.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/BrickWall_02.sbsar
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/BrickWall_02.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Camouflage_02.sbsar
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Camouflage_02.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Cereals.sbsar
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Cereals.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Desert_Sand_01.sbsar
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Desert_Sand_01.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Pavement_01.sbsar
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Pavement_01.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Pavement_Path.sbsar
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Pavement_Path.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Road_01.sbsar
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Road_01.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Shutter_01.sbsar
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Shutter_01.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Stones_01.sbsar
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Stones_01.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Wood_Planks_01.sbsar
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/Wood_Planks_01.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/concrete_049.sbsar
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/concrete_049.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/metal_floor_003.sbsar
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/metal_floor_003.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/metal_plate_008.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/roofing_007.sbsar
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/roofing_007.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/sci_fi_003.sbsar
+#	deleted:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/sci_fi_003.sbsar.meta
+#	renamed:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/bricks_032.sbsar -> Assets/graphics/materiaux/Substances_Free/bricks_032.sbsar
+#	renamed:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/bricks_032.sbsar.meta -> Assets/graphics/materiaux/Substances_Free/bricks_032.sbsar.meta
+#	renamed:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/metal_plate_005.sbsar -> Assets/graphics/materiaux/Substances_Free/metal_plate_005.sbsar
+#	renamed:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/metal_plate_005.sbsar.meta -> Assets/graphics/materiaux/Substances_Free/metal_plate_005.sbsar.meta
+#	renamed:    Assets/graphics/materiaux/Substances_Free/Substance_Free_Collection_sbsar/metal_plate_008.sbsar -> Assets/graphics/materiaux/Substances_Free/metal_plate_008.sbsar
+#	new file:   Assets/graphics/materiaux/Substances_Free/metal_plate_008.sbsar.meta
+#	deleted:    Assets/graphics/materiaux/metal_06.meta
+#	deleted:    Assets/graphics/materiaux/metal_06/metal_06.mat
+#	deleted:    Assets/graphics/materiaux/metal_06/metal_06.mat.meta
+#	deleted:    Assets/graphics/materiaux/metal_06/metal_plates_06_dif.tga
+#	deleted:    Assets/graphics/materiaux/metal_06/metal_plates_06_dif.tga.meta
+#	deleted:    Assets/graphics/materiaux/metal_06/metal_plates_06_nm.tga
+#	deleted:    Assets/graphics/materiaux/metal_06/metal_plates_06_nm.tga.meta
+#	deleted:    Assets/graphics/materiaux/metal_06/metal_plates_06_spec.tga
+#	deleted:    Assets/graphics/materiaux/metal_06/metal_plates_06_spec.tga.meta
+#	modified:   Assets/graphics/models/Materials.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_0Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_0Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_10Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_10Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_11Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_11Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_12Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_12Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_13Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_13Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_14Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_14Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_15Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_15Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_16Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_16Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_17Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_17Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_1Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_1Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_2Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_2Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_3Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_3Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_4Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_4Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_5Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_5Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_6Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_6Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_7Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_7Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_8Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_8Mat.mat.meta
+#	deleted:    Assets/graphics/models/Materials/Mesh_9Mat.mat
+#	deleted:    Assets/graphics/models/Materials/Mesh_9Mat.mat.meta
+#	new file:   Assets/graphics/models/Starship.meta
+#	new file:   Assets/graphics/models/Starship/3D.meta
+#	new file:   Assets/graphics/models/Starship/3D/AF-SS01.fbx
+#	new file:   Assets/graphics/models/Starship/3D/AF-SS01.fbx.meta
+#	new file:   Assets/graphics/models/Starship/3D/Materials.meta
+#	new file:   Assets/graphics/models/Starship/3D/Materials/AF-SS01_Black.mat
+#	new file:   Assets/graphics/models/Starship/3D/Materials/AF-SS01_Black.mat.meta
+#	new file:   Assets/graphics/models/Starship/3D/Materials/AF-SS01_Navy.mat
+#	new file:   Assets/graphics/models/Starship/3D/Materials/AF-SS01_Navy.mat.meta
+#	new file:   Assets/graphics/models/Starship/3D/Materials/AF-SS01_White.mat
+#	new file:   Assets/graphics/models/Starship/3D/Materials/AF-SS01_White.mat.meta
+#	new file:   Assets/graphics/models/Starship/Textures.meta
+#	new file:   Assets/graphics/models/Starship/Textures/AF-SS01_Black.png
+#	new file:   Assets/graphics/models/Starship/Textures/AF-SS01_Black.png.meta
+#	new file:   Assets/graphics/models/Starship/Textures/AF-SS01_Navy.png
+#	new file:   Assets/graphics/models/Starship/Textures/AF-SS01_Navy.png.meta
+#	new file:   Assets/graphics/models/Starship/Textures/AF-SS01_Normalmap.png
+#	new file:   Assets/graphics/models/Starship/Textures/AF-SS01_Normalmap.png.meta
+#	new file:   Assets/graphics/models/Starship/Textures/AF-SS01_White.png
+#	new file:   Assets/graphics/models/Starship/Textures/AF-SS01_White.png.meta
+#	deleted:    Assets/prefabs/bullet.prefab
+#	new file:   Assets/prefabs/effect/explosion_missile.prefab
+#	new file:   Assets/prefabs/effect/explosion_missile.prefab.meta
+#	modified:   Assets/prefabs/effect/smoke.prefab
+#	modified:   Assets/prefabs/effect/smoke.prefab.meta
+#	modified:   Assets/prefabs/enemy/EnemySpawn.prefab
+#	modified:   Assets/prefabs/enemy/Space_Invader.prefab
+#	new file:   Assets/prefabs/starship.meta
+#	new file:   Assets/prefabs/starship/AF-SS01_Black.prefab
+#	new file:   Assets/prefabs/starship/AF-SS01_Black.prefab.meta
+#	new file:   Assets/prefabs/starship/AF-SS01_Navy.prefab
+#	new file:   Assets/prefabs/starship/AF-SS01_Navy.prefab.meta
+#	new file:   Assets/prefabs/starship/AF-SS01_White 1.prefab
+#	new file:   Assets/prefabs/starship/AF-SS01_White 1.prefab.meta
+#	new file:   Assets/prefabs/tiles.meta
+#	new file:   Assets/prefabs/tiles/FloorTech01.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech01.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech01b.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech01b.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech01c.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech01c.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech02.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech02.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech02b.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech02b.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech02c.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech02c.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech03.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech03.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech04.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech04.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech04b.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech04b.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech05.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech05.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech05b.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech05b.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech05c.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech05c.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech05d.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech05d.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech05e.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech05e.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech06.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech06.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech07.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech07.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTech08.prefab
+#	new file:   Assets/prefabs/tiles/FloorTech08.prefab.meta
+#	new file:   Assets/prefabs/tiles/FloorTiles.prefab
+#	new file:   Assets/prefabs/tiles/FloorTiles.prefab.meta
+#	new file:   Assets/prefabs/tiles/Wall01.prefab
+#	new file:   Assets/prefabs/tiles/Wall01.prefab.meta
+#	new file:   Assets/prefabs/tiles/Wall01b.prefab
+#	new file:   Assets/prefabs/tiles/Wall01b.prefab.meta
+#	new file:   Assets/prefabs/tiles/Wall01c.prefab
+#	new file:   Assets/prefabs/tiles/Wall01c.prefab.meta
+#	new file:   Assets/prefabs/tiles/Wall02.prefab
+#	new file:   Assets/prefabs/tiles/Wall02.prefab.meta
+#	new file:   Assets/prefabs/tiles/Wall02b.prefab
+#	new file:   Assets/prefabs/tiles/Wall02b.prefab.meta
+#	new file:   Assets/prefabs/tiles/Wall02c.prefab
+#	new file:   Assets/prefabs/tiles/Wall02c.prefab.meta
+#	new file:   Assets/prefabs/tiles/Wall03.prefab
+#	new file:   Assets/prefabs/tiles/Wall03.prefab.meta
+#	new file:   Assets/prefabs/turret/projectille.meta
+#	new file:   Assets/prefabs/turret/projectille/grenade.prefab
+#	renamed:    Assets/prefabs/bullet.prefab.meta -> Assets/prefabs/turret/projectille/grenade.prefab.meta
+#	new file:   Assets/prefabs/turret/projectille/missile.prefab
+#	new file:   Assets/prefabs/turret/projectille/missile.prefab.meta
+#	modified:   Assets/prefabs/turret/turret_gatling.prefab
+#	new file:   Assets/prefabs/turret/turret_grenade.prefab
+#	new file:   Assets/prefabs/turret/turret_grenade.prefab.meta
+#	new file:   Assets/prefabs/turret/turret_missile.prefab
+#	new file:   Assets/prefabs/turret/turret_missile.prefab.meta
+#	deleted:    Assets/script/Bullet.cs
+#	deleted:    Assets/script/Bullet.cs.meta
+#	modified:   Assets/script/Enemy.cs
+#	modified:   Assets/script/EnemySpawn.cs
+#	new file:   Assets/script/Game.meta
+#	new file:   Assets/script/Game/EndScript.cs
+#	new file:   Assets/script/Game/EndScript.cs.meta
+#	renamed:    Assets/script/GameState.cs -> Assets/script/Game/GameState.cs
+#	renamed:    Assets/script/GameState.cs.meta -> Assets/script/Game/GameState.cs.meta
+#	modified:   Assets/script/PollingManager.cs
+#	new file:   Assets/script/Projectille.cs
+#	new file:   Assets/script/Projectille.cs.meta
+#	modified:   Assets/script/TPSCamera.cs
+#	deleted:    Assets/script/Turret.cs
+#	new file:   Assets/script/Turret.meta
+#	new file:   Assets/script/Turret/Turret.cs
+#	renamed:    Assets/script/Turret.cs.meta -> Assets/script/Turret/Turret.cs.meta
+#	new file:   Assets/script/Turret/Turret_Gatling.cs
+#	new file:   Assets/script/Turret/Turret_Gatling.cs.meta
+#	new file:   Assets/script/Turret/Turret_Grenade.cs
+#	new file:   Assets/script/Turret/Turret_Grenade.cs.meta
+#	new file:   Assets/script/Turret/Turret_Missile.cs
+#	new file:   Assets/script/Turret/Turret_Missile.cs.meta
+#	deleted:    Assets/tp2.unity
+#	new file:   Assets/tp3.unity
+#	renamed:    Assets/tp2.unity.meta -> Assets/tp3.unity.meta
+#	modified:   Gamagora-Animation-TP2.sln
+#	new file:   Gamagora-Animation-TP3.sln
+#	new file:   Gamagora-Animation-TP3.userprefs
+#	new file:   Gamagora-Unity-TP.sln
+#	new file:   Gamagora-Unity-TP.userprefs
+#	modified:   ProjectSettings/ProjectSettings.asset
+#	modified:   ProjectSettings/ProjectVersion.txt
+#	modified:   ProjectSettings/TagManager.asset
+#
+
