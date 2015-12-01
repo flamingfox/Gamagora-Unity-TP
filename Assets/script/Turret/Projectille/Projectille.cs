@@ -19,7 +19,7 @@ public class Projectille : MonoBehaviour, IKillable
 		impactEffect.parent = this;
 	}
 
-	void OnEnable ()
+	virtual protected void OnEnable ()
 	{
 		mesh.SetActive (true);
 		dead = false;
@@ -30,7 +30,6 @@ public class Projectille : MonoBehaviour, IKillable
 	virtual protected void Update ()
 	{
 		if (!dead) {
-
 			if (Vector3.Distance (this.transform.position, gunner.transform.position) > lifeDistance) {
 				kill ();
 			}
@@ -42,7 +41,7 @@ public class Projectille : MonoBehaviour, IKillable
 		gunner = _gunner;
 	}
 
-	void OnTriggerEnter (Collider collision)
+	protected virtual void OnTriggerEnter (Collider collision)
 	{
 		if (collision.tag == "enemy" && !collision.GetComponent<Enemy>().isDead() ) {
 			collision.GetComponent<Enemy> ().hit (damage);
@@ -52,7 +51,7 @@ public class Projectille : MonoBehaviour, IKillable
 		}
 	}
 
-	void impact ()
+	virtual protected void impact ()
 	{
 		dead = true;
 		impactEffect.run ();

@@ -4,7 +4,11 @@ using System.Collections;
 public class Turret_Grenade : Turret {
 
 	public PollingManager grenadeManager;
-	
+
+	[Range(10, 100)]
+	public float impulsionForce = 50f;
+
+
 	protected override void aim ()
 	{
 		Vector3 directionTarget = target.transform.position - support.transform.position;
@@ -25,11 +29,12 @@ public class Turret_Grenade : Turret {
 	override protected void fire(){
 		
 		GameObject grenade = grenadeManager.getFirstAvailable ();
-		Projectille projectille = grenade.GetComponent<Projectille> ();
+		DelayProjectille projectille = grenade.GetComponent<DelayProjectille> ();
 		
-		projectille.transform.position = gun.transform.position;
+		projectille.transform.position = gun.transform.position + gun.transform.up*0.4f;
 		projectille.setGunner (tower);
 		projectille.damage = damage;
 		projectille.lifeDistance = range;
+		projectille.GetComponent<Rigidbody> ().velocity = gun.transform.up * impulsionForce;
 	}
 }
