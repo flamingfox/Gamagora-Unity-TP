@@ -3,19 +3,9 @@ using System.Collections;
 
 public class PollingManager : MonoBehaviour {
 
-	public int initNbInstanciate = 5;
 	public GameObject model;
 
 	private ArrayList pooling = new ArrayList();
-
-
-	public void Start(){
-		for(int i=0; i< initNbInstanciate; i++){
-			GameObject clone = Instantiate (model, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
-			clone.SetActive(false);
-			pooling.Add (clone);
-		}
-	}
 
 	public GameObject getFirstAvailable(){
 

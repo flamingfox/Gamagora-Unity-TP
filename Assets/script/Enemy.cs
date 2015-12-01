@@ -3,11 +3,14 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour, IKillable
 {
+	public GameState gameState;
 	public int PV = 50;
 	public float speed = 5f;
 
 	public GameObject mesh;
 	public ParticuleManager deathEffect;
+
+	private float distanceContact;
 
 	private bool dead = false;
 
@@ -20,6 +23,8 @@ public class Enemy : MonoBehaviour, IKillable
 		mesh.SetActive(true);
 		deathEffect.init ();
 		dead = false;
+
+		distanceContact = Vector3.Distance (this.transform.position, this.GetComponent<Collider> ().bounds.max);
 
 		Hashtable argsMoveTo = new Hashtable();
 		argsMoveTo.Add ("path", iTweenPath.GetPath ("enemyPath"));
@@ -43,6 +48,12 @@ public class Enemy : MonoBehaviour, IKillable
 			death ();
 	}
 
+	public bool collision(Vector3 position){
+		if (Vector3.Distance (position, this.transform.position) <= distanceContact)
+			return true;
+		return false;
+	}
+
 	public void kill(){
 		gameObject.SetActive (false);
 	}
@@ -52,6 +63,11 @@ public class Enemy : MonoBehaviour, IKillable
 		mesh.SetActive (false);
 		deathEffect.run ();
 		iTween.Stop(this.gameObject);
+	}
+
+	public void OnTarget(){
+		gameState.EnemyReach ();
+		death ();
 	}
 
 	public bool isDead(){
