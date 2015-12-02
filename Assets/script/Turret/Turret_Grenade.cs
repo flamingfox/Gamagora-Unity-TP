@@ -9,11 +9,38 @@ public class Turret_Grenade : Turret {
 	public float impulsionForce = 50f;
 
 
+	protected override Enemy selectTarget ()
+	{
+		Enemy retour = null;
+		
+		float distance = range;
+		ArrayList listEnemy = pollingEnemy.getListActive ();
+		foreach (GameObject gO in listEnemy) {			
+			if (!gO.GetComponent<Enemy> ().isDead ()) {
+
+				Vector3 directionTarget = gO.transform.position+gO.transform.forward*3;
+
+				float dis = Vector3.Distance (directionTarget, this.transform.position);
+
+				if (Vector3.Distance (directionTarget, this.transform.position) <= distance) {
+					retour = gO.GetComponent<Enemy> ();
+					distance = Vector3.Distance (gO.transform.position, this.transform.position);
+				}
+			}
+		}
+		
+		return retour;
+	}
+
 	protected override void aim ()
 	{
-		Vector3 directionTarget = target.transform.position - support.transform.position;
+
+		//Vector3 directionTarget = target.transform.position - support.transform.position;
+		//directionTarget = directionTarget.normalized;
+
+		Vector3 directionTarget = target.transform.position+target.transform.forward*3 - support.transform.position;
 		directionTarget = directionTarget.normalized;
-		
+
 		Debug.DrawLine (support.transform.position, support.transform.position + directionTarget * 2f, Color.cyan);
 		
 		float stepRotation = speedRotate * Time.deltaTime;

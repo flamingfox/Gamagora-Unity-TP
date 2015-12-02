@@ -32,15 +32,17 @@ public class Enemy : MonoBehaviour, IKillable
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
-	}
+	//void Update () {}
 
-	public void hit(int damage){
+	public bool hit(int damage){
 		PV -= damage;
 
-		if (PV <= 0)
+		if (PV <= 0) {
 			death ();
+			return true;
+		}
+
+		return false;
 	}
 
 	public void kill(){
@@ -48,10 +50,10 @@ public class Enemy : MonoBehaviour, IKillable
 	}
 
 	private void death(){
-		dead = true;
-		mesh.SetActive (false);
-		deathEffect.run ();
 		iTween.Stop(this.gameObject);
+		dead = true;
+		//mesh.SetActive (false);
+		deathEffect.run ();
 	}
 
 	public bool isDead(){

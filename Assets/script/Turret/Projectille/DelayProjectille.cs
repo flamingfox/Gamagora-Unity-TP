@@ -9,8 +9,11 @@ public class DelayProjectille : Projectille {
 
 	private bool gizmos = false;
 
-	[Range(1,10)]
+	[Range(1f,10f)]
 	public float AOE = 2f;
+
+	[Range(0.5f,10f)]
+	public float explosionForce = 2f;
 
 
 	public void OnDrawGizmos(){
@@ -43,14 +46,15 @@ public class DelayProjectille : Projectille {
 		base.impact ();
 
 		gizmos = true;
-		RaycastHit[] hits = Physics.SphereCastAll (transform.position, AOE, Vector3.right);
+		RaycastHit[] hits = Physics.SphereCastAll (transform.position, AOE, Vector3.right, AOE);
 
 		foreach(RaycastHit hit in hits){
 			if(hit.collider.tag == "enemy"){
-				hit.collider.GetComponent<Enemy>().hit(damage);
+				if(hit.collider.GetComponent<Enemy>().hit(damage)){
+					hit.collider.GetComponent<Rigidbody>().velocity =
+						((hit.transform.position-transform.position).normalized+(Vector3.up*0.2f)) *explosionForce;
+				}
 			}
 		}
 	}
-
-	protected override void OnTriggerEnter (Collider collision)	{}
 }

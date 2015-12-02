@@ -29,20 +29,10 @@ abstract public class Turret : MonoBehaviour
 	void Update ()
 	{
 		if (target == null) {
-			float distance = range;
-			ArrayList listEnemy = pollingEnemy.getListActive ();
-			foreach (GameObject gO in listEnemy) {
-
-				if (!gO.GetComponent<Enemy> ().isDead ()) {
-					if (Vector3.Distance (gO.transform.position, this.transform.position) <= distance) {
-						target = gO.GetComponent<Enemy> ();
-						distance = Vector3.Distance (gO.transform.position, this.transform.position);
-					}
-				}
-			}
+			target = selectTarget();
 		} else {
 
-			if (target.isDead ()) {
+			if (target.isDead () || Vector3.Distance(transform.position, target.transform.position) > range) {
 				target = null;
 			} else {
 				aim ();
@@ -131,6 +121,24 @@ abstract public class Turret : MonoBehaviour
 			posPrecedent = pos;
 		}
 		*/
+	}
+
+	virtual protected Enemy selectTarget(){
+		Enemy retour = null;
+
+		float distance = range;
+		ArrayList listEnemy = pollingEnemy.getListActive ();
+		foreach (GameObject gO in listEnemy) {
+			
+			if (!gO.GetComponent<Enemy> ().isDead ()) {
+				if (Vector3.Distance (gO.transform.position, this.transform.position) <= distance) {
+					retour = gO.GetComponent<Enemy> ();
+					distance = Vector3.Distance (gO.transform.position, this.transform.position);
+				}
+			}
+		}
+
+		return retour;
 	}
 
 	abstract protected void aim ();
