@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Turret_Grenade : Turret {
 
-	public PollingManager grenadeManager;
+	public PoolingManager grenadeManager;
 
 	[Range(10, 100)]
 	public float impulsionForce = 50f;
@@ -14,7 +15,7 @@ public class Turret_Grenade : Turret {
 		Enemy retour = null;
 		
 		float distance = range;
-		ArrayList listEnemy = pollingEnemy.getListActive ();
+		List<GameObject> listEnemy = poolingEnemy.getListActive ();
 		foreach (GameObject gO in listEnemy) {			
 			if (!gO.GetComponent<Enemy> ().isDead ()) {
 
@@ -55,7 +56,7 @@ public class Turret_Grenade : Turret {
 	
 	override protected void fire(){
 		
-		GameObject grenade = grenadeManager.getFirstAvailable ();
+		GameObject grenade = grenadeManager.getObject ();
 		DelayProjectille projectille = grenade.GetComponent<DelayProjectille> ();
 		
 		projectille.transform.position = gun.transform.position + gun.transform.up*0.4f;

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Turret_Missile : Turret {
 
-	public PollingManager missileManager;
+	public PoolingManager missileManager;
 
 	protected override void aim ()
 	{
@@ -24,7 +24,7 @@ public class Turret_Missile : Turret {
 
 	override protected void fire(){
 
-		GameObject missile = missileManager.getFirstAvailable ();
+		GameObject missile = missileManager.getObject ();
 		GuidedProjectille projectille = missile.GetComponent<GuidedProjectille> ();
 
 		projectille.transform.position = gun.transform.position;

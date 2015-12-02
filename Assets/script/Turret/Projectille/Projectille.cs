@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Projectille : MonoBehaviour, IKillable
+public class Projectille : Poolable, IKillable
 {
 	
 	public GameObject mesh;
@@ -60,6 +60,6 @@ public class Projectille : MonoBehaviour, IKillable
 
 	public void kill ()
 	{
-		gameObject.SetActive (false);
+		poolRelease ();
 	}
 }

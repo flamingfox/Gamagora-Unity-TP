@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemySpawn : MonoBehaviour {
 
 	public GameState gameState;
-	public PollingManager enemyPolling;
+	public PoolingManager enemyPooling;
 	public GameObject spawnArea;
 	[Range(0.1f, 50f)]
 	public float spawnPerSecond = 0.5f;
@@ -22,7 +22,7 @@ public class EnemySpawn : MonoBehaviour {
 		if (Time.time > nextSpawn && spawning) {
 			
 			nextSpawn = Time.time + 1/spawnPerSecond;
-			GameObject enemy = enemyPolling.getFirstAvailable();
+			GameObject enemy = enemyPooling.getObject();
 
 			enemy.GetComponent<Enemy>().PV = spawnPV;
 

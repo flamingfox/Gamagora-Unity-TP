@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour, IKillable
+public class Enemy : Poolable, IKillable
 {
 	public int PV = 50;
 	public float speed = 5f;
@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour, IKillable
 
 	// Use this for initialization
 	void OnEnable () {
+		GetComponent<Rigidbody> ().isKinematic = false;
+		GetComponent<BoxCollider> ().enabled = true;
 		mesh.SetActive(true);
 		deathEffect.init ();
 		dead = false;
@@ -38,7 +40,7 @@ public class Enemy : MonoBehaviour, IKillable
 		PV -= damage;
 
 		if (PV <= 0) {
-			death ();
+			dying ();
 			return true;
 		}
 
@@ -46,14 +48,22 @@ public class Enemy : MonoBehaviour, IKillable
 	}
 
 	public void kill(){
-		gameObject.SetActive (false);
+		poolRelease ();
 	}
 
-	private void death(){
+	private void dying(){
 		iTween.Stop(this.gameObject);
+		GetComponent<BoxCollider> ().enabled = false;
+		GetComponent<Rigidbody> ().velocity = transform.forward*speed ;
 		dead = true;
-		//mesh.SetActive (false);
-		deathEffect.run ();
+		Invoke ("disappear", 1f);
+	}
+
+	private void disappear(){
+		transform.rotation.SetLookRotation( new Vector3 (0, 1, 0), new Vector3(0,1,0) );
+		GetComponent<Rigidbody> ().isKinematic = true;
+		mesh.SetActive (false);
+		deathEffect.run();
 	}
 
 	public bool isDead(){

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 abstract public class Turret : MonoBehaviour
 {
@@ -8,7 +9,7 @@ abstract public class Turret : MonoBehaviour
 	public GameObject support;
 	public GameObject gun;
 	public Enemy target;
-	public PollingManager pollingEnemy;
+	public PoolingManager poolingEnemy;
 	public ParticleSystem fireEffect;
 	[Range(0, 5f)]
 	public float
@@ -127,7 +128,7 @@ abstract public class Turret : MonoBehaviour
 		Enemy retour = null;
 
 		float distance = range;
-		ArrayList listEnemy = pollingEnemy.getListActive ();
+		List<GameObject> listEnemy = poolingEnemy.getListActive ();
 		foreach (GameObject gO in listEnemy) {
 			
 			if (!gO.GetComponent<Enemy> ().isDead ()) {
