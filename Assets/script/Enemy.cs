@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : Poolable, IKillable
+public class Enemy : MonoBehaviour, Poolable, IKillable
 {
 	public int PV = 50;
 	public float speed = 5f;
@@ -18,7 +18,7 @@ public class Enemy : Poolable, IKillable
 	// Use this for initialization
 	void OnEnable () {
 		GetComponent<Rigidbody> ().isKinematic = false;
-		GetComponent<BoxCollider> ().enabled = true;
+		GetComponent<BoxCollider> ().isTrigger = false;
 		mesh.SetActive(true);
 		deathEffect.init ();
 		dead = false;
@@ -53,7 +53,7 @@ public class Enemy : Poolable, IKillable
 
 	private void dying(){
 		iTween.Stop(this.gameObject);
-		GetComponent<BoxCollider> ().enabled = false;
+		GetComponent<BoxCollider> ().isTrigger = true;
 		GetComponent<Rigidbody> ().velocity = transform.forward*speed ;
 		dead = true;
 		Invoke ("disappear", 1f);
@@ -69,4 +69,17 @@ public class Enemy : Poolable, IKillable
 	public bool isDead(){
 		return dead;
 	}
+
+
+	/**********/
+	PoolingManager poolParent;
+	
+	public void setPoolParent(PoolingManager parent){
+		poolParent = parent;
+	}
+	
+	public void poolRelease(){
+		poolParent.releaseObject(this.gameObject);
+	}
+	/**********/
 }

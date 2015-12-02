@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 20601fcf5ed6fd5458bf69ff7d8e5f0c
+timeCreated: 1449060021
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - turret_gatling: {fileID: 161118, guid: f46b9fe5ebeb38d489505c73b9a02c5e, type: 2}
+  - turret_missile: {fileID: 122258, guid: 901042bac7aae5a419ed244c728e42a0, type: 2}
+  - turret_grenade: {fileID: 154140, guid: a616ae67b9cfae14d85c182b8657d86e, type: 2}
+  - newSocle: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

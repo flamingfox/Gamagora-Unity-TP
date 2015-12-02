@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Poolable : MonoBehaviour{
+public interface Poolable{
+	/*
 	PoolingManager poolParent;
 
 	public void setPoolParent(PoolingManager parent){
@@ -12,6 +13,10 @@ public class Poolable : MonoBehaviour{
 	protected void poolRelease(){
 		poolParent.releaseObject(this.gameObject);
 	}
+	*/
+
+	void setPoolParent(PoolingManager parent);	
+	void poolRelease();
 }
 
 public class PoolingManager : MonoBehaviour {

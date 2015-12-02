@@ -1,19 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Turret\Projectille\Projectille.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\PoolingManager.cs">
     <Files>
-      <File FileName="c:\Users\etu\Unity\Gamagora-Unity-TP\Assets\Script\EnemySpawn.cs" Line="25" Column="48" />
-      <File FileName="c:\Users\etu\Unity\Gamagora-Unity-TP\Assets\Script\Turret\Turret.cs" Line="1" Column="1" />
-      <File FileName="c:\Users\etu\Unity\Gamagora-Unity-TP\Assets\Script\Turret\Turret_Grenade.cs" Line="1" Column="1" />
-      <File FileName="c:\Users\etu\Unity\Gamagora-Unity-TP\Assets\Script\Turret\Turret_Missile.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\PoolingManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Enemy.cs" Line="57" Column="64" />
-      <File FileName="Assets\Script\Turret\Projectille\Projectille.cs" Line="33" Column="1" />
+      <File FileName="Assets\Script\Audio\AudioSourcePoolable.cs" Line="18" Column="32" />
+      <File FileName="Assets\Script\Audio\AudioManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Building\Buildable.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\PoolingManager.cs" Line="34" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="c:\Users\etu\Unity\Gamagora-Unity-TP\Assets\Script\EnemySpawn.cs" line="25" />
+      <Breakpoint file="C:\Users\etu\Unity\Gamagora-Unity-TP\Assets\Script\Audio\AudioManager.cs" line="52" />
+      <Breakpoint file="C:\Users\etu\Unity\Gamagora-Unity-TP\Assets\Script\PoolingManager.cs" line="34" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

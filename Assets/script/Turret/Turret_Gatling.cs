@@ -25,7 +25,7 @@ public class Turret_Gatling : Turret {
 		RaycastHit hit;
 		Physics.Raycast (getGunPosition (), getGunDirection (), out hit, range);
 
-		if (hit.collider.tag == "enemy") {
+		if (hit.collider != null && hit.collider.tag == "enemy") {
 			Enemy enemyStrike = hit.collider.GetComponent<Enemy>();
 			enemyStrike.hit(damage);
 		}
