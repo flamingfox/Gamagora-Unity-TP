@@ -1,28 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Projectille : MonoBehaviour, Poolable, IKillable
+public class Projectille : Poolable, IKillable
 {
 	
 	public GameObject mesh;
 	public float lifeDistance = 50f;
-	public Enemy target = null;
 	public int damage = 1;
 
 	public ParticuleManager impactEffect;
 
 	protected GameObject gunner;
 	protected bool dead = false;
-
-	PoolingManager poolParent;
-	
-	public void setPoolParent(PoolingManager parent){
-		poolParent = parent;
-	}
-	
-	public void poolRelease(){
-		poolParent.releaseObject(this.gameObject);
-	}
 
 	void Start ()
 	{

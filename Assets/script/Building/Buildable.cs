@@ -13,8 +13,8 @@ public class Buildable : MonoBehaviour {
 		instance.transform.position = transform.position + new Vector3(0f,0.5f,0f);
 
 		instance.GetComponent<Turret> ().poolingEnemy = GameManager.Instance.enemyPooling;
+		instance.GetComponent<Turret> ().buildFinish ();
 
-		AudioManager.Instance.Play ("GatlingBuild");
 
 		Destroy(gameObject.GetComponent<Buildable>());
 

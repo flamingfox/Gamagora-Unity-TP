@@ -21,7 +21,7 @@ public class Turret_Grenade : Turret {
 
 				Vector3 directionTarget = gO.transform.position+gO.transform.forward*3;
 
-				float dis = Vector3.Distance (directionTarget, this.transform.position);
+				//float dis = Vector3.Distance (directionTarget, this.transform.position);
 
 				if (Vector3.Distance (directionTarget, this.transform.position) <= distance) {
 					retour = gO.GetComponent<Enemy> ();

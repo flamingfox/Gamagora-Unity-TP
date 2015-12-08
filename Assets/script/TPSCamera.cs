@@ -7,6 +7,7 @@ public class TPSCamera : MonoBehaviour
 	public Turret player;
 	public float distanceCameraPlayer = 3f;
 	public float hauteurCameraPlayer = 1f;
+	/*
 	private Vector3 positionRTS;
 	private Quaternion rotationRTS;
 

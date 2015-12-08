@@ -12,19 +12,22 @@ abstract public class Turret : MonoBehaviour
 	public PoolingManager poolingEnemy;
 	public ParticleSystem fireEffect;
 	[Range(0, 5f)]
-	public float
-		speedRotate = 2f;
+	public float speedRotate = 2f;
 	[Range(0, 100f)]
-	public float
-		shootPerSecond = 0.25f;
+	public float shootPerSecond = 0.25f;
 	[Range(0, 50f)]
-	public float
-		range = 20f;
+	public float range = 20f;
 	[Range(1, 100)]
-	public int
-		damage = 1;
+	public int damage = 1;
 	private float nextFire = 0f;
 	public float gunRotationSpeedCoeff = 1;
+
+	public AudioPlayer buildFinishSound;
+	public AudioPlayer fireSound;
+
+	public void buildFinish (){
+		buildFinishSound.play();
+	}
 
 	// Update is called once per frame
 	void Update ()
@@ -40,7 +43,6 @@ abstract public class Turret : MonoBehaviour
 			}
 		}
 
-
 		Debug.DrawRay (support.transform.position, support.transform.forward * 2f, Color.red, 0f);
 
 		if (target != null) {
@@ -53,6 +55,7 @@ abstract public class Turret : MonoBehaviour
 				nextFire = Time.time + 1 / shootPerSecond;
 
 				fire ();
+				fireSound.play();
 			}
 		}
 	}

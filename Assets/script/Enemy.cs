@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour, Poolable, IKillable
+public class Enemy : Poolable, IKillable
 {
 	public int PV = 50;
 	public float speed = 5f;
@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour, Poolable, IKillable
 	}
 
 	public void kill(){
+		dead = true;
 		poolRelease ();
 	}
 
@@ -69,17 +70,4 @@ public class Enemy : MonoBehaviour, Poolable, IKillable
 	public bool isDead(){
 		return dead;
 	}
-
-
-	/**********/
-	PoolingManager poolParent;
-	
-	public void setPoolParent(PoolingManager parent){
-		poolParent = parent;
-	}
-	
-	public void poolRelease(){
-		poolParent.releaseObject(this.gameObject);
-	}
-	/**********/
 }

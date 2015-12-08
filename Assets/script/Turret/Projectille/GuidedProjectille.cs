@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GuidedProjectille : Projectille {
 
-	public Enemy target = null;
+	public Enemy target;
 	public float rotationSpeed = 5f;
 	public float speed = 2f;
 

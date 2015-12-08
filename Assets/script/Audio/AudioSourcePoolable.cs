@@ -1,21 +1,23 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using System.Collections;
 
 
-public class AudioSourcePoolable : MonoBehaviour, Poolable
+public class AudioSourcePoolable : Poolable
 {
 	private AudioSource audioSource;
 
-	/**********/
-	PoolingManager poolParent;
-	
-	public void setPoolParent(PoolingManager parent){
-		poolParent = parent;
-	}
-	/**********/
-
 	void Awake(){
 		audioSource = this.gameObject.GetComponent<AudioSource> ();
+	}
+
+	void OnEnable(){
+		audioSource.pitch = 1f;
+		audioSource.volume = 1f;
+		audioSource.loop = false;
+		audioSource.mute = false;
+
+		//audioSource.
 	}
 
 	public float pitch{
@@ -28,13 +30,28 @@ public class AudioSourcePoolable : MonoBehaviour, Poolable
 		set { audioSource.volume = value; }
 	}
 
+	public int priority{
+		get { return audioSource.priority; }
+		set { audioSource.priority = value; }
+	}
+
+	public bool loop{
+		get { return audioSource.loop; }
+		set { audioSource.loop = value; }
+	}
+
+	public void Play(AudioClip sound){
+		audioSource.clip = sound;
+
+		audioSource.Play ();
+		Invoke ("poolRelease", sound.length);
+	}
+
 	public void PlayOneShot(AudioClip audioClip, float volumeScale){
+
+		audioSource.outputAudioMixerGroup = AudioManager.Instance.mixer.FindMatchingGroups("Master")[0];
+
 		audioSource.PlayOneShot (audioClip, volumeScale);
 		Invoke ("poolRelease", audioClip.length);
 	}
-
-	public void poolRelease(){
-		poolParent.releaseObject(this.gameObject);
-	}
-	/**********/
 }
