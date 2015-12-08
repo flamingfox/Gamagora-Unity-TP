@@ -1,18 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\Audio\AudioSourcePoolable.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\Audio\AudioManager.cs">
     <Files>
-      <File FileName="Assets\script\Audio\AudioSourcePoolable.cs" Line="57" Column="2" />
-      <File FileName="Assets\script\Audio\AudioPlayer.cs" Line="13" Column="21" />
-      <File FileName="Assets\script\Audio\AudioManager.cs" Line="43" Column="60" />
-      <File FileName="b:\Utilisateur\git\Unity\Gamagora-Unity-TP\Assets\script\Audio\AudioSourcePoolable.cs" Line="18" Column="3" />
-      <File FileName="Assets\script\PoolingManager.cs" Line="32" Column="1" />
+      <File FileName="Assets\script\Audio\AudioSourcePoolable.cs" Line="38" Column="24" />
+      <File FileName="Assets\script\Audio\AudioPlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\Audio\AudioManager.cs" Line="52" Column="1" />
+      <File FileName="b:\Utilisateur\git\Unity\Gamagora-Unity-TP\Assets\script\Audio\AudioSourcePoolable.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\PoolingManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="B:\Utilisateur\git\Unity\Gamagora-Unity-TP\Assets\script\Audio\AudioManager.cs" line="70" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

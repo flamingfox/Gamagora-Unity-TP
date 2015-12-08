@@ -35,6 +35,11 @@ public class AudioSourcePoolable : Poolable
 		set { audioSource.priority = value; }
 	}
 
+	public AudioMixerGroup outputAudioMixerGroup{
+		get { return audioSource.outputAudioMixerGroup; }
+		set { audioSource.outputAudioMixerGroup = value; }
+	}
+
 	public bool loop{
 		get { return audioSource.loop; }
 		set { audioSource.loop = value; }
@@ -48,8 +53,6 @@ public class AudioSourcePoolable : Poolable
 	}
 
 	public void PlayOneShot(AudioClip audioClip, float volumeScale){
-
-		audioSource.outputAudioMixerGroup = AudioManager.Instance.mixer.FindMatchingGroups("Master")[0];
 
 		audioSource.PlayOneShot (audioClip, volumeScale);
 		Invoke ("poolRelease", audioClip.length);

@@ -27,7 +27,7 @@ public class AudioManager : Singleton<AudioManager> {
 		Play(sound, null);
 	}
 
-	public void Play(AudioClip sound, KeyValuePair<string, float>[] options) {
+	public void Play(AudioClip sound, KeyValuePair<string, object>[] options) {
 		//if (!soundMap.ContainsKey(soundname)) {
 		//	Debug.LogWarning("SoundManager: Tried to play undefined sound: " + soundname);
 		//	return;
@@ -40,12 +40,12 @@ public class AudioManager : Singleton<AudioManager> {
 			if(audioObject != null){
 				AudioSourcePoolable audioPoolable = audioObject.GetComponent<AudioSourcePoolable>();
 
-				foreach(KeyValuePair<string, float> option in options){
+				foreach(KeyValuePair<string, object> option in options){
 
 					switch(option.Key){
 
 					case "volume":
-						audioPoolable.volume = option.Value;
+						audioPoolable.volume = (float)option.Value;
 						break;
 
 					case "priority":
@@ -53,16 +53,16 @@ public class AudioManager : Singleton<AudioManager> {
 						break;
 
 					case "pitch":
-						audioPoolable.pitch = option.Value;
+						audioPoolable.pitch = (float)option.Value;
 						break;
 
 					case "loop":
-						if( option.Value != 0f)
-							audioPoolable.loop = true;
-						else
-							audioPoolable.loop = false;
+						audioPoolable.loop = (bool)option.Value;
 						break;
 
+					case "groupMixer":
+						audioPoolable.outputAudioMixerGroup =  AudioManager.Instance.mixer.FindMatchingGroups((string)option.Value)[0];
+						break;
 					}
 
 				}
