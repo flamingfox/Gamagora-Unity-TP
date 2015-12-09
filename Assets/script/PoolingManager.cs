@@ -35,7 +35,7 @@ public class PoolingManager : MonoBehaviour {
 		}
 	}
 
-	public GameObject getObject(){
+	public GameObject getFirstObjectAvailable(){
 
 		lock(_available)
 		{
@@ -53,7 +53,7 @@ public class PoolingManager : MonoBehaviour {
 				if(_inUse.Count == 0){
 					preLoad();
 
-					return getObject();
+					return getFirstObjectAvailable();
 				}
 				else if(newInstanciationAutorization){
 					GameObject instance = Instantiate (model, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
@@ -66,6 +66,17 @@ public class PoolingManager : MonoBehaviour {
 			}
 		}
 
+		return null;
+	}
+
+	public GameObject getObject(int id){
+
+		if (_inUse.Count != 0) {
+			GameObject instance = _inUse [id];
+			return instance;
+		}
+
+		
 		return null;
 	}
 

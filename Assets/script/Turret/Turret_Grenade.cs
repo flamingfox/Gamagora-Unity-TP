@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -56,7 +56,7 @@ public class Turret_Grenade : Turret {
 	
 	override protected void fire(){
 		
-		GameObject grenade = grenadeManager.getObject ();
+		GameObject grenade = grenadeManager.getFirstObjectAvailable ();
 		DelayProjectille projectille = grenade.GetComponent<DelayProjectille> ();
 		
 		projectille.transform.position = gun.transform.position + gun.transform.up*0.4f;

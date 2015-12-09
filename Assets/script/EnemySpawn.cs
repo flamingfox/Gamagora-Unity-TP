@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class EnemySpawn : MonoBehaviour {
@@ -22,7 +22,7 @@ public class EnemySpawn : MonoBehaviour {
 		if (Time.time > nextSpawn && spawning) {
 			
 			nextSpawn = Time.time + 1/spawnPerSecond;
-			GameObject enemy = enemyPooling.getObject();
+			GameObject enemy = enemyPooling.getFirstObjectAvailable();
 
 			enemy.GetComponent<Enemy>().PV = spawnPV;
 

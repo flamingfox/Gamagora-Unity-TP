@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Turret_Missile : Turret {
@@ -24,7 +24,7 @@ public class Turret_Missile : Turret {
 
 	override protected void fire(){
 
-		GameObject missile = missileManager.getObject ();
+		GameObject missile = missileManager.getFirstObjectAvailable ();
 		GuidedProjectille projectille = missile.GetComponent<GuidedProjectille> ();
 
 		projectille.transform.position = gun.transform.position;

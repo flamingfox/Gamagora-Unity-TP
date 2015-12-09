@@ -5,8 +5,7 @@ using System.Collections.Generic;
 
 public class AudioPlayer : MonoBehaviour{
 
-	public AudioClip sound;
-	public AudioMixerGroup groupMixer;
+	public AudioData soundPack;
 	[Range(0,10)]
 	public int priority = 5;
 	[Range(0f,1f)]
@@ -20,11 +19,11 @@ public class AudioPlayer : MonoBehaviour{
 
 		options[0] = new KeyValuePair<string, object> ("volume", volume);
 		options[1] = new KeyValuePair<string, object> ("priority", priority);
-		options[2] = new KeyValuePair<string, object> ("groupMixer", groupMixer.name);
+		options[2] = new KeyValuePair<string, object> ("groupMixer", soundPack.groupMixer);
 
 		if(deltaPitch != 0f)
-			options[3] = new KeyValuePair<string, object> ("pitch", 1f - (deltaPitch/2) + Random.value*deltaPitch);
+			options[2] = new KeyValuePair<string, object> ("pitch", 1f - (deltaPitch/2) + Random.value*deltaPitch);
 
-		AudioManager.Instance.Play (sound, options);
+		AudioManager.Instance.Play (soundPack.name, options);
 	}
 }

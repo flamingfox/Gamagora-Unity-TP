@@ -9,33 +9,48 @@ public class AudioManager : Singleton<AudioManager> {
 	public AudioMixer mixer;
 	public bool soundOn = true;
 
-	//public AudioClip[] sounds;
-	//Dictionary<string,AudioClip> soundMap = new Dictionary<string,AudioClip>();
+	public AudioData[] initSounds;
+	Dictionary<string, AudioData> soundMap = new Dictionary<string,AudioData>();
 
 	public int numberOfChannels = 16;
 
 	void Awake(){
 		audioSources.initNbInstanciate = numberOfChannels;
 
-		//for (int i = 0; i < sounds.Length; i++) {
-		//	soundMap.Add(sounds[i].name, sounds[i]);
-		//}
+		for (int i = 0; i < initSounds.Length; i++) {
+			soundMap.Add(initSounds[i].name, initSounds[i]);
+		}
 	}
 
+	public void addAudioData (AudioData audioData)
+	{
+		foreach (KeyValuePair<string, AudioData> sound in soundMap) {
+			if(sound.Key == audioData.name)
+				return;
+		}
 
-	public void Play(AudioClip sound) {
-		Play(sound, null);
+		//sounds[sounds.Length] = audioData;
+		soundMap.Add(audioData.name, audioData);
 	}
 
-	public void Play(AudioClip sound, KeyValuePair<string, object>[] options) {
-		//if (!soundMap.ContainsKey(soundname)) {
-		//	Debug.LogWarning("SoundManager: Tried to play undefined sound: " + soundname);
-		//	return;
-		//}
+	public void removeAudioData (AudioData audioData)
+	{
+		soundMap.Remove (audioData.name);
+	}
+
+	public uint Play(string soundname) {
+		return Play(soundname, null);
+	}
+
+	public uint Play(string soundname, KeyValuePair<string, object>[] options) {
+		if (!soundMap.ContainsKey(soundname)) {
+			Debug.LogWarning("SoundManager: Tried to play undefined sound: " + soundname);
+			return 0;
+		}
 
 		if (soundOn) {
 
-			GameObject audioObject = audioSources.getObject();
+			GameObject audioObject = audioSources.getFirstObjectAvailable();
 
 			if(audioObject != null){
 				AudioSourcePoolable audioPoolable = audioObject.GetComponent<AudioSourcePoolable>();
@@ -61,16 +76,20 @@ public class AudioManager : Singleton<AudioManager> {
 						break;
 
 					case "groupMixer":
-						audioPoolable.outputAudioMixerGroup =  AudioManager.Instance.mixer.FindMatchingGroups((string)option.Value)[0];
+						audioPoolable.outputAudioMixerGroup =  (AudioMixerGroup)option.Value;
 						break;
 					}
 
 				}
-				audioPoolable.Play(sound);
+				audioPoolable.Play(soundMap[soundname].getSound());
+
+				//audioPoolable.PlayOneShot(soundMap[soundname], audioPoolable.volume);
 				//audioPoolable.PlayOneShot(sound, audioPoolable.volume);
 
 				//audio.transform
 			}
 		}
+
+		return 0;
 	}
 }
