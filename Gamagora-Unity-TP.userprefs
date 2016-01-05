@@ -1,9 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\desable.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader">
     <Files>
-      <File FileName="Assets\Standard Assets\Cameras\Scripts\TargetFieldOfView.cs" Line="1" Column="1" />
-      <File FileName="Assets\desable.cs" Line="9" Column="40" />
+      <File FileName="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" Line="10" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
