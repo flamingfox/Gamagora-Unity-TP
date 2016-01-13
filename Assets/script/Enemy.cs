@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Enemy : Poolable, IKillable
 {
+	private int PVMax = 50;
 	public int PV = 50;
 	public float speed = 5f;
 
@@ -11,8 +13,13 @@ public class Enemy : Poolable, IKillable
 
 	private bool dead = false;
 
+	public Slider healthBar;
+
 	void Start(){
 		deathEffect.parent = this;
+		PVMax = PV;
+		healthBar.maxValue = PVMax;
+		healthBar.value = PV;
 	}
 
 	// Use this for initialization
@@ -22,6 +29,10 @@ public class Enemy : Poolable, IKillable
 		mesh.SetActive(true);
 		deathEffect.init ();
 		dead = false;
+
+		healthBar.gameObject.SetActive (true);
+		healthBar.maxValue = PVMax;
+		healthBar.value = PV;
 
 		Hashtable argsMoveTo = new Hashtable();
 		argsMoveTo.Add ("path", iTweenPath.GetPath ("enemyPath"));
@@ -38,7 +49,7 @@ public class Enemy : Poolable, IKillable
 
 	public bool hit(int damage){
 		PV -= damage;
-
+		healthBar.value = PV;
 		if (PV <= 0) {
 			dying ();
 			return true;
@@ -54,6 +65,7 @@ public class Enemy : Poolable, IKillable
 
 	private void dying(){
 		iTween.Stop(this.gameObject);
+		healthBar.gameObject.SetActive (false);
 		GetComponent<BoxCollider> ().isTrigger = true;
 		GetComponent<Rigidbody> ().velocity = transform.forward*speed ;
 		dead = true;

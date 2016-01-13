@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameState : MonoBehaviour {
+public class GameState : Singleton<GameState> {
 
 	[Range(0, 50)]
 	public int PlayerPV = 10;
@@ -9,14 +9,21 @@ public class GameState : MonoBehaviour {
 
 	private float startSurviveTime = 0f;
 
+	private UIManager UI;
+
 	public void Start(){
 		startSurviveTime = Time.time;
+		UI = GameManager.Instance.UI;
+	}
+
+	public void FixedUpdate(){
+		UI.SetChrono(Time.time - startSurviveTime);
 	}
 
 	public void EnemyReach(){
 		if (!gameOver) {
 			PlayerPV--;
-
+			UI.setPV(PlayerPV);
 			if (PlayerPV <= 0) {
 				float surviveTime = Time.time - startSurviveTime;
 
