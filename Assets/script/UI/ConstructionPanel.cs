@@ -8,12 +8,14 @@ public class ConstructionPanel : Singleton<ConstructionPanel> {
 	public Button grenade;
 	public Button missile;
 	public GameObject thisPanel;
+	public RectTransform panelTransform;
 
-	/*
-	public setPosition(Vector3 position){
-
+	public void setPosition(Vector3 position){
+		//thisPanel.transform.position = position;
+		panelTransform.position = position; // Vector2(position.x, position.y);
 	}
 
+	/*
 	public getDimension(){
 		return thisPanel.transform.
 	}

@@ -14,6 +14,7 @@ public class Enemy : Poolable, IKillable
 	private bool dead = false;
 
 	public Slider healthBar;
+	public Canvas UI;
 
 	void Start(){
 		deathEffect.parent = this;
@@ -22,8 +23,15 @@ public class Enemy : Poolable, IKillable
 		healthBar.value = PV;
 	}
 
+	void FixedUpdate(){
+		UI.transform.rotation = GameState.Instance.transform.rotation;
+		UI.transform.Rotate (new Vector3 (90, 0, -90));
+		//UI.transform.Rotate (new Vector3 (0, 0, 0), Space.World);
+	}
+
 	// Use this for initialization
 	void OnEnable () {
+		GetComponent<Rigidbody> ().useGravity = false;
 		GetComponent<Rigidbody> ().isKinematic = false;
 		GetComponent<BoxCollider> ().isTrigger = false;
 		mesh.SetActive(true);
@@ -67,6 +75,7 @@ public class Enemy : Poolable, IKillable
 		iTween.Stop(this.gameObject);
 		healthBar.gameObject.SetActive (false);
 		GetComponent<BoxCollider> ().isTrigger = true;
+		GetComponent<Rigidbody> ().useGravity = true;
 		GetComponent<Rigidbody> ().velocity = transform.forward*speed ;
 		dead = true;
 		Invoke ("disappear", 1f);
